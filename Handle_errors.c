@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 21:39:50 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/01/24 22:21:16 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/01/26 21:19:14 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	is_repeated(char **str)
 		j = i + 1;
 		while (str[j])
 		{
-			if (ft_strcmp(str[i], str[j]) == 0)
+			if (ft_atoi(str[i]) == ft_atoi(str[j]))
 				return (1);
 			j++;
 		}

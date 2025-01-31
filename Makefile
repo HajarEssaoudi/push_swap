@@ -1,11 +1,10 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS =
 NAME = push_swap
 
-SRCS = main.c utils.c Handle_args.c Handle_errors.c
+SRCS = main.c utils_args.c utils_stack.c Handle_args.c Handle_errors.c Handle_stack.c
 OBJS = $(SRCS:.c=.o)
 
-# Paths to Static Libraries
 LIB1 = libft/libft.a
 LIB2 = ft_printf/libftprintf.a
 
