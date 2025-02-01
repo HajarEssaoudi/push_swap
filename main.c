@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:20:46 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/01/25 18:30:42 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/01 00:54:44 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ int	main(int ac, char **av)
 			a = init_a(count_arg, args);
 			free_args(args);
 			b = create_stack();
-			print_a(a);
+			sort_a(a);
+			// print_a(a);
+			// free_stack(a);
+			// free_stack(b);
 		}
 	}
 	return (0);

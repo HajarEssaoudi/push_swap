@@ -2,7 +2,8 @@ CC = gcc
 CFLAGS =
 NAME = push_swap
 
-SRCS = main.c utils_args.c utils_stack.c Handle_args.c Handle_errors.c Handle_stack.c
+SRCS = main.c utils_args.c utils_stack.c Handle_args.c Handle_errors.c Handle_stack.c \
+       Handle_operations.c sort_cases.c sort.c
 OBJS = $(SRCS:.c=.o)
 
 LIB1 = libft/libft.a

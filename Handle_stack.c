@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:55:18 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/01/25 18:43:33 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/01/31 22:42:49 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	push(Stack *stack, int value)
 	node->data = value;
 	node->next = stack->top;
 	stack->top = node;
+	stack->size++;
 }
 
 Stack	*create_stack(void)
@@ -65,4 +66,5 @@ void	print_a(Stack *stack)
 		printf("%d\n", current->data);
 		current = current->next;
 	}
+	printf("%d\n", stack->size);
 }
