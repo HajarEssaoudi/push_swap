@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:20:46 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/01 23:29:12 by root             ###   ########.fr       */
+/*   Updated: 2025/02/02 00:37:40 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ int	main(int ac, char **av)
 		a = init_a(count_arg, args);
 		free_args(args);
 		b = create_stack();
-		// sort_a(a);
 		print_a(a);
-		rra(a);
+		sort_a(a);
 		print_a(a);
 		free_stack(a);
 		free_stack(b);

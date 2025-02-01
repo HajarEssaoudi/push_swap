@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 22:39:02 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/01 23:14:25 by root             ###   ########.fr       */
+/*   Updated: 2025/02/02 00:36:36 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	sort_a(t_stack *stack)
 		// node = stack->top;
 		if (stack->size == 2)
 			sort_two(stack);
-		// else if (stack->size == 3)
-		// 	sort_three(stack);
+		else if (stack->size == 3)
+			sort_three(stack);
 		// else if(stack->size <= 5)
 		// 	sort_till_five(stack);
 		// else if(stack->size > 5)

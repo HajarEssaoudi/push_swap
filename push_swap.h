@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:29:11 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/01 23:09:01 by root             ###   ########.fr       */
+/*   Updated: 2025/02/02 00:39:55 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,5 @@ void			free_stack(t_stack *stack);
 int				is_sorted(t_stack *stack);
 void			sort_a(t_stack *stack);
 void			sort_two(t_stack *stack);
-
+void			sort_three(t_stack	*stack);
 #endif
