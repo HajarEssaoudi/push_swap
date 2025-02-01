@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:29:11 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/01 18:16:38 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/01 23:09:01 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ typedef struct Node
 {
 	int			data;
 	struct Node	*next;
-}				Node;
+}				t_node;
 
 typedef struct my_stack
 {
-	Node		*top;
+	t_node		*top;
 	int			size;
-}				Stack;
+}				t_stack;
 
 // Util functions to handle the args
 long			convert(char *str);
@@ -41,28 +41,28 @@ char			**alloc_args(int count_args, int argc, char **argv);
 int				check_errors(char **str);
 
 // Handle operations
-void			sa(Stack *stack);
-void			sb(Stack *stack);
-void			ss(Stack *stack_a, Stack *stack_b);
-void			pa(Stack *stack_a, Stack *stack_b);
-void			pb(Stack *stack_a, Stack *stack_b);
-void			ra(Stack *stack);
-void			rb(Stack *stack);
-void			rr(Stack *stack_a, Stack *stack_b);
-void			rra(Stack *stack);
-void			rrb(Stack *stack);
-void			rrr(Stack *stack_a, Stack *stack_b);
+void			sa(t_stack *stack);
+void			sb(t_stack *stack);
+void			ss(t_stack *stack_a, t_stack *stack_b);
+void			pa(t_stack *stack_a, t_stack *stack_b);
+void			pb(t_stack *stack_a, t_stack *stack_b);
+void			ra(t_stack *stack);
+void			rb(t_stack *stack);
+void			rr(t_stack *stack_a, t_stack *stack_b);
+void			rra(t_stack *stack);
+void			rrb(t_stack *stack);
+void			rrr(t_stack *stack_a, t_stack *stack_b);
 
 // Handle stack
-Stack			*create_stack(void);
-void			push(Stack *stack, int value);
-Stack			*init_a(int ac, char **av);
-void			print_a(Stack *stack);
-void			free_stack(Stack *stack);
+t_stack			*create_stack(void);
+void			push(t_stack *stack, int value);
+t_stack			*init_a(int ac, char **av);
+void			print_a(t_stack *stack);
+void			free_stack(t_stack *stack);
 
 // sort functions
-int				is_sorted(Stack *stack);
-void			sort_a(Stack *stack);
-void			sort_two(Stack *stack);
+int				is_sorted(t_stack *stack);
+void			sort_a(t_stack *stack);
+void			sort_two(t_stack *stack);
 
 #endif

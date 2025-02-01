@@ -3,17 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:37:56 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/01 00:40:00 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/01 23:15:44 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_two(Stack *stack)
+void	sort_two(t_stack *stack)
 {
 	if (stack->top->data > stack->top->next->data)
 		sa(stack);
+}
+
+void sort_three(t_stack	*stack)
+{
+	
 }

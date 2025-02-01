@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Handle_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:39:31 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/01 19:00:06 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/01 23:21:54 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(Stack *stack)
+void	swap(t_stack *stack)
 {
 	int	tmp;
 
@@ -21,28 +21,28 @@ void	swap(Stack *stack)
 	stack->top->next->data = tmp;
 }
 
-void	sa(Stack *stack)
+void	sa(t_stack *stack)
 {
 	swap(stack);
 	write(1, "sa\n", 3);
 }
 
-void	sb(Stack *stack)
+void	sb(t_stack *stack)
 {
 	swap(stack);
 	write(1, "sb\n", 3);
 }
 
-void	ss(Stack *stack_a, Stack *stack_b)
+void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
 	write(1, "ss\n", 3);
 }
 
-void	pa(Stack *stack_a, Stack *stack_b)
+void	pa(t_stack *stack_a, t_stack *stack_b)
 {
-	Node	*tmp;
+	t_node	*tmp;
 
 	if (stack_b->size == 0)
 		exit(1);
@@ -55,9 +55,9 @@ void	pa(Stack *stack_a, Stack *stack_b)
 	write(1, "pa\n", 3);
 }
 
-void	pb(Stack *stack_a, Stack *stack_b)
+void	pb(t_stack *stack_a, t_stack *stack_b)
 {
-	Node	*tmp;
+	t_node	*tmp;
 
 	if (stack_a->size == 0)
 		exit(1);
@@ -70,10 +70,10 @@ void	pb(Stack *stack_a, Stack *stack_b)
 	write(1, "pb\n", 3);
 }
 
-void	rotate(Stack *stack)
+void	rotate(t_stack *stack)
 {
-	Node	*tmp;
-	Node	*current;
+	t_node	*tmp;
+	t_node	*current;
 
 	if (stack->size <= 2)
 		return ;
@@ -88,29 +88,29 @@ void	rotate(Stack *stack)
 	tmp->next = NULL;
 }
 
-void	ra(Stack *stack)
+void	ra(t_stack *stack)
 {
 	rotate(stack);
 	write(1, "ra\n", 3);
 }
 
-void	rb(Stack *stack)
+void	rb(t_stack *stack)
 {
 	rotate(stack);
 	write(1, "rb\n", 3);
 }
 
-void	rr(Stack *stack_a, Stack *stack_b)
+void	rr(t_stack *stack_a, t_stack *stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
 	write(1, "rr\n", 3);
 }
 
-void	reverse_rotate(Stack *stack)
+void	reverse_rotate(t_stack *stack)
 {
-	Node	*tmp;
-	Node	*current;
+	t_node	*tmp;
+	t_node	*current;
 
 	tmp = stack->top;
 	current = NULL;
@@ -124,19 +124,19 @@ void	reverse_rotate(Stack *stack)
 	stack->top = tmp;
 }
 
-void	rra(Stack *stack)
+void	rra(t_stack *stack)
 {
 	reverse_rotate(stack);
 	write(1, "rra\n", 4);
 }
 
-void	rrb(Stack *stack)
+void	rrb(t_stack *stack)
 {
 	reverse_rotate(stack);
 	write(1, "rrb\n", 4);
 }
 
-void	rrr(Stack *stack_a, Stack *stack_b)
+void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
