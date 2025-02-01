@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:55:18 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/01/31 22:42:49 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/01 18:18:32 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ Stack	*init_a(int ac, char **av)
 	n = 0;
 	i = ac - 1;
 	stack = create_stack();
+	stack->size = 0;
 	if (!stack)
 		return (NULL);
 	while (i >= 0)
@@ -63,8 +64,24 @@ void	print_a(Stack *stack)
 	current = stack->top;
 	while (current)
 	{
-		printf("%d\n", current->data);
+		ft_printf("%d ", current->data);
 		current = current->next;
 	}
-	printf("%d\n", stack->size);
+	ft_printf("\n");
+	// printf("%d\n", stack->size);
+}
+
+void	free_stack(Stack *stack)
+{
+	Node	*current_node;
+	Node	*next_node;
+
+	current_node = stack->top;
+	while (current_node != NULL)
+	{
+		next_node = current_node->next;
+		free(current_node);
+		current_node = next_node;
+	}
+	free(stack);
 }

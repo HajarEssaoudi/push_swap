@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 22:39:02 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/01 00:55:01 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/01 22:09:25 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@ int	is_sorted(Stack *stack)
 {
 	Node	*node;
 
+	if (!stack || !stack->top)
+		return (1);
 	node = stack->top;
 	if (stack->size <= 1)
 		return (1);
-	while (node->next != NULL)
+	while (node && node->next)
 	{
 		if (node->data > node->next->data)
 			return (0);
@@ -30,11 +32,10 @@ int	is_sorted(Stack *stack)
 
 void	sort_a(Stack *stack)
 {
-	Node	*node;
-
+	// Node	*node;
 	if (!is_sorted(stack))
 	{
-		node = stack->top;
+		// node = stack->top;
 		if (stack->size == 2)
 			sort_two(stack);
 		else if (stack->size == 3)

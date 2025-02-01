@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:29:11 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/01 00:44:24 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/01 18:16:38 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,23 @@ int				check_errors(char **str);
 
 // Handle operations
 void			sa(Stack *stack);
+void			sb(Stack *stack);
+void			ss(Stack *stack_a, Stack *stack_b);
+void			pa(Stack *stack_a, Stack *stack_b);
+void			pb(Stack *stack_a, Stack *stack_b);
+void			ra(Stack *stack);
+void			rb(Stack *stack);
+void			rr(Stack *stack_a, Stack *stack_b);
+void			rra(Stack *stack);
+void			rrb(Stack *stack);
+void			rrr(Stack *stack_a, Stack *stack_b);
 
 // Handle stack
 Stack			*create_stack(void);
 void			push(Stack *stack, int value);
 Stack			*init_a(int ac, char **av);
 void			print_a(Stack *stack);
+void			free_stack(Stack *stack);
 
 // sort functions
 int				is_sorted(Stack *stack);
