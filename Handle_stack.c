@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Handle_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:55:18 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/02 00:41:32 by root             ###   ########.fr       */
+/*   Updated: 2025/02/02 10:58:23 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ t_stack	*create_stack(void)
 	if (!stack)
 		exit(1);
 	stack->top = NULL;
+	stack->size = 0;
 	return (stack);
 }
 
@@ -68,8 +69,8 @@ void	print_a(t_stack *stack)
 		current = current->next;
 	}
 	ft_printf("\n");
-	// printf("%d\n", stack->size);
 }
+// printf("%d\n", stack->size);
 
 void	free_stack(t_stack *stack)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Handle_operations.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:39:31 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/01 23:21:54 by root             ###   ########.fr       */
+/*   Updated: 2025/02/02 10:55:51 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	pa(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*tmp;
 
-	if (stack_b->size == 0)
+	if (stack_b->size == 0 || !stack_b->top)
 		exit(1);
 	tmp = stack_b->top;
 	stack_b->top = stack_b->top->next;
@@ -109,19 +109,19 @@ void	rr(t_stack *stack_a, t_stack *stack_b)
 
 void	reverse_rotate(t_stack *stack)
 {
-	t_node	*tmp;
-	t_node	*current;
+	t_node	*last;
+	t_node	*before_last;
 
-	tmp = stack->top;
-	current = NULL;
-	while(tmp->next != NULL)
+	last = stack->top;
+	before_last = NULL;
+	while (last->next != NULL)
 	{
-		current = tmp;
-		tmp =tmp->next;
+		before_last = last;
+		last = last->next;
 	}
-	current->next = NULL;
-	tmp->next = stack->top;
-	stack->top = tmp;
+	before_last->next = NULL; /*to make the before last a "last"*/
+	last->next = stack->top;
+	stack->top = last;
 }
 
 void	rra(t_stack *stack)
