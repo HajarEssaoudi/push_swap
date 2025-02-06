@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Handle_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:55:18 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/02 10:58:23 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/06 02:53:13 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,37 @@ void	free_stack(t_stack *stack)
 		current_node = next_node;
 	}
 	free(stack);
+}
+
+int	stack_len(t_stack *stack)
+{
+	int count;
+	t_node *c;
+
+	count = 0;
+	c = stack->top;
+	while(c != NULL)
+	{
+		count++;
+		c = c->next;
+	}
+	return(count);
+}
+
+int	stack_index(t_stack *stack, t_node *node)
+{
+	int	i;
+	int median;
+
+	i = 0;
+	median = stack_len(stack) / 2;
+	while(stack)
+	{
+		node->index = i;
+		if(i <= median)
+			node->above_median = 1;
+		else
+			node->above_median = 0;
+		i++;
+	}
 }

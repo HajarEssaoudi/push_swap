@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:37:56 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/02 21:16:42 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/06 00:59:23 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,8 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 	pa(stack_a, stack_b);
 }
 
-void	sort_more(t_stack *stack_a, t_stack *stack_b)
+void	sort_more(t_stack *a, t_stack *b)
 {
-
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	sort_two(stack_b);
-	// while (stack_a->top != NULL)
-	// {
-		
-	// }
-	// while (stack_b->top != NULL)
-	// {
-	// 	pa(stack_a, stack_b);
-	// }
+	emptying_a(a, b);
+	sort_three(a);
 }
