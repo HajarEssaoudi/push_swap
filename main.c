@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:20:46 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/06 02:51:19 by root             ###   ########.fr       */
+/*   Updated: 2025/02/07 14:35:10 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ int	main(int ac, char **av)
 		a = init_a(count_arg, args);
 		free_args(args);
 		b = create_stack();
+		stack_index(a);
+		// implement_a_nodes(a, b);
 		// sort_a(a, b);
 		// // emptying_a(a, b);
-		// print_a(a);
-		// print_a(b);
+		print_a(a);
+		// print_a	(b);
 		// free_stack(a);
 		// free_stack(b);
 	}

@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:39:31 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/02 10:55:51 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/07 21:34:37 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,4 +141,18 @@ void	rrr(t_stack *stack_a, t_stack *stack_b)
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
 	write(1, "rrr\n", 4);
+}
+
+
+void	rotate_both(t_stack *a, t_stack *b, t_node *cheapest)
+{
+	t_node *current_b;
+	t_node *current_a;
+
+	current_b = b->top;
+	current_b = b->top;
+	while(current_b != cheapest->target_node && current_a != cheapest)
+		rr(a, b);
+	stack_index(a);
+	stack_index(b);
 }

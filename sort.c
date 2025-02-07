@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:37:56 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/07 11:30:23 by root             ###   ########.fr       */
+/*   Updated: 2025/02/07 21:19:13 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,12 @@ void	sort_more(t_stack *a, t_stack *b)
 		implement_a_nodes(a, b);
 		move_a_to_b(a, b);
 	}
-	sort_three(a);
-	while(b)
-	{
-		implement_b_nodes(a, b);
-		move_b_to_a(a, b);
-	}
-	current_index(a);
-	min_on_top(a);
+// 	sort_three(a);
+// 	while(b)
+// 	{
+// 		implement_b_nodes(a, b);
+// 		move_b_to_a(a, b);
+// 	}
+// 	current_index(a);
+// 	min_on_top(a);
 }

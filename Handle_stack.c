@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Handle_stack.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:55:18 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/07 11:10:12 by root             ###   ########.fr       */
+/*   Updated: 2025/02/07 14:37:20 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,9 @@ void	print_a(t_stack *stack)
 	current = stack->top;
 	while (current)
 	{
-		ft_printf("%d ", current->data);
+		ft_printf("the index = %d, data = %d, is_above median ? %d  \n", current->index, current->data, current->above_median);
 		current = current->next;
 	}
-	ft_printf("\n");
 }
 // printf("%d\n", stack->size);
 
@@ -102,20 +101,23 @@ int	stack_len(t_stack *stack)
 	return(count);
 }
 
-void	stack_index(t_stack *stack, t_node *node)
+void	stack_index(t_stack *stack)
 {
 	int	i;
 	int median;
+	t_node *node;
 
 	i = 0;
+	node = stack->top;
 	median = stack_len(stack) / 2;
-	while(stack)
+	while(node)
 	{
 		node->index = i;
 		if(i <= median)
 			node->above_median = 1;
 		else
 			node->above_median = 0;
+		node = node->next;
 		i++;
 	}
 }

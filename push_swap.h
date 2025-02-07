@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:29:11 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/06 02:50:15 by root             ###   ########.fr       */
+/*   Updated: 2025/02/07 21:07:35 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ typedef struct Node
 	int			data;
 	int			index;
 	int			above_median;
+	int			push_cost;
+	int			cheapest;
+	struct Node	*target_node;
 	struct Node	*next;
 }				t_node;
 
@@ -62,17 +65,17 @@ t_stack			*init_a(int ac, char **av);
 void			print_a(t_stack *stack);
 void			free_stack(t_stack *stack);
 int				stack_len(t_stack *stack);
-int	stack_index(t_stack *stack, t_node *node);
+void			stack_index(t_stack *stack);
 // sort functions
 int				is_sorted(t_stack *stack);
 int				smallest(t_stack *stack);
 void			sort_a(t_stack *stack_a, t_stack *stack_b);
 void			sort_two(t_stack *stack);
-void			sort_three(t_stack	*stack);
+void			sort_three(t_stack *stack);
 void			sort_four(t_stack *stack_a, t_stack	*stack_b);
 void			sort_five(t_stack *stack_a, t_stack	*stack_b);
 void			sort_more(t_stack *stack_a, t_stack	*stack_b);
 
 // turk implementation
-void emptying_a(t_stack *a, t_stack *b);
+void	implement_a_nodes(t_stack *a, t_stack *b);
 #endif
