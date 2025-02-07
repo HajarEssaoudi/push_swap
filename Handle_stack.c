@@ -6,7 +6,7 @@
 /*   By: root <root@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:55:18 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/06 02:53:13 by root             ###   ########.fr       */
+/*   Updated: 2025/02/07 11:10:12 by root             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int	stack_len(t_stack *stack)
 	return(count);
 }
 
-int	stack_index(t_stack *stack, t_node *node)
+void	stack_index(t_stack *stack, t_node *node)
 {
 	int	i;
 	int median;
