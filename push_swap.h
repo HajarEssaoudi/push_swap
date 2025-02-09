@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:29:11 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/02 11:55:09 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/10 00:16:41 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ typedef struct my_stack
 	int			size;
 }				t_stack;
 
+typedef struct chunk_sort
+{
+	int			chunk_index;
+	int			chunk_size;
+}				t_chunk_sort;
+
 // Util functions to handle the args
 long			convert(char *str);
 int				ft_strcmp(const char *s1, const char *s2);
@@ -46,6 +52,7 @@ void			sb(t_stack *stack);
 void			ss(t_stack *stack_a, t_stack *stack_b);
 void			pa(t_stack *stack_a, t_stack *stack_b);
 void			pb(t_stack *stack_a, t_stack *stack_b);
+void			rotate(t_stack *stack);
 void			ra(t_stack *stack);
 void			rb(t_stack *stack);
 void			rr(t_stack *stack_a, t_stack *stack_b);
@@ -56,17 +63,27 @@ void			rrr(t_stack *stack_a, t_stack *stack_b);
 // Handle stack
 t_stack			*create_stack(void);
 void			push(t_stack *stack, int value);
+void			pop(t_stack *stack);
 t_stack			*init_a(int ac, char **av);
 void			print_a(t_stack *stack);
 void			free_stack(t_stack *stack);
-
+t_stack			*copy_stack(t_stack *stack);
+void			sort_stack(t_stack *source, t_stack *sorted);
+int				index_node(t_stack *stack, int num);
 // sort functions
 int				is_sorted(t_stack *stack);
 int				smallest(t_stack *stack);
+int				biggest(t_stack *stack);
 void			sort_a(t_stack *stack_a, t_stack *stack_b);
 void			sort_two(t_stack *stack);
-void			sort_three(t_stack	*stack);
-void			sort_four(t_stack *stack_a, t_stack	*stack_b);
-void			sort_five(t_stack *stack_a, t_stack	*stack_b);
-void			sort_more(t_stack *stack_a, t_stack	*stack_b);
+void			sort_three(t_stack *stack);
+void			sort_four(t_stack *stack_a, t_stack *stack_b);
+void			sort_five(t_stack *stack_a, t_stack *stack_b);
+void			sort_more(t_stack *stack_a, t_stack *stack_b);
+
+// chunks
+void			search_in_a(t_stack *a, t_stack *b, int value);
+void			move_a_to_b(t_stack *a, t_stack *b, t_stack *sorting_stack,
+					t_chunk_sort chunk_info);
+void			move_b_to_a(t_stack *a, t_stack *b);
 #endif

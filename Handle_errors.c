@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 21:39:50 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/01/26 21:19:14 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/09 02:19:07 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,36 @@ int	is_repeated(char **str)
 	return (0);
 }
 
+int	is_empty(char **str)
+{
+	int	i;
+	int	j;
+
+	if (!str || !*str)
+		return (1);
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[i][j])
+		{
+			if (str[i][j] < 9 || str[i][j] > 13 || str[i][j] == 32)
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
 int	check_errors(char **str)
 {
-	if (verify_number(str) == 1
-		|| verify_number_max(str) == 1
-		|| is_repeated(str) == 1)
+	if (verify_number(str)
+		|| verify_number_max(str)
+		|| is_repeated(str)
+		|| is_empty(str))
 	{
-		ft_putstr("ERROR\n");
+		ft_putstr_fd("ERROR\n", 2);
 		free_args(str);
 		return (1);
 	}

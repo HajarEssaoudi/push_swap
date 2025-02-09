@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:20:46 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/03 11:37:18 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/10 00:22:11 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	main(int ac, char **av)
 		count_arg = count_args(ac, av);
 		if (count_arg < 0)
 		{
-			ft_printf("ERROR\n");
-			free_args(av);
+			ft_putstr_fd("ERROR\n", 2);
 			exit(1);
 		}
 		args = alloc_args(count_arg, ac, av);
@@ -35,7 +34,10 @@ int	main(int ac, char **av)
 		free_args(args);
 		b = create_stack();
 		sort_a(a, b);
+		// printf("--------------stak a--------: \n");
 		// print_a(a);
+		// printf("-----------stak b-----------: \n");
+		// print_a(b);
 		free_stack(a);
 		free_stack(b);
 	}

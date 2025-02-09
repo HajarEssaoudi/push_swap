@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:37:56 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/02 21:16:42 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/10 00:06:51 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,18 +76,30 @@ void	sort_five(t_stack *stack_a, t_stack *stack_b)
 	pa(stack_a, stack_b);
 }
 
-void	sort_more(t_stack *stack_a, t_stack *stack_b)
+void	sort_more(t_stack *a, t_stack *b)
 {
+	t_stack			*sorting_stack;
+	t_stack			*copied_stack;
+	int				chunk_count;
+	t_chunk_sort	chunk_info;
 
-	pb(stack_a, stack_b);
-	pb(stack_a, stack_b);
-	sort_two(stack_b);
-	// while (stack_a->top != NULL)
-	// {
-		
-	// }
-	// while (stack_b->top != NULL)
-	// {
-	// 	pa(stack_a, stack_b);
-	// }
+	sorting_stack = create_stack();
+	copied_stack = copy_stack(a);
+	chunk_info.chunk_index = 0;
+	sort_stack(copied_stack, sorting_stack);
+	free_stack(copied_stack);
+	if (a->size > 100)
+		chunk_count = 8;
+	else
+		chunk_count = 4;
+	chunk_info.chunk_size = (a->size) / chunk_count;
+	if (a->size % chunk_count != 0)
+		chunk_info.chunk_size++;
+	while (chunk_info.chunk_index <= chunk_count)
+	{
+		move_a_to_b(a, b, sorting_stack, chunk_info);
+		chunk_info.chunk_index++;
+	}
+	free_stack(sorting_stack);
+	move_b_to_a(a, b);
 }

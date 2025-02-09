@@ -1,9 +1,10 @@
 CC = gcc
-CFLAGS = -Werror -Wextra -Wall
+CFLAGS =
 NAME = push_swap
 
 SRCS = main.c utils_args.c Handle_args.c Handle_errors.c Handle_stack.c \
-		Handle_operations.c sort_cases.c sort.c
+		Handle_operations.c sort_cases.c sort.c algo.c stack_utils.c \
+		rotate_operation.c push_operation.c 
 OBJS = $(SRCS:.c=.o)
 
 LIB1 = libft/libft.a
