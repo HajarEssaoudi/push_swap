@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 00:09:53 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/10 00:16:07 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/11 21:17:55 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	rotate(t_stack *stack)
 	t_node	*tmp;
 	t_node	*current;
 
-	if (stack->size <= 2)
+	if (stack->size < 2)
 		return ;
 	tmp = stack->top;
 	stack->top = stack->top->next;

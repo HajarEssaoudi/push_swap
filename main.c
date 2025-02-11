@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:20:46 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/11 19:12:05 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/11 21:11:14 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int	main(int ac, char **av)
 		sort_a(a, b);
 		printf("--------------stak a--------: \n");
 		print_a(a);
-		// printf("-----------stak b-----------: \n");
-		// print_a(b);
+		printf("-----------stak b-----------: \n");
+		print_a(b);
 		free_stack(a);
 		free_stack(b);
 	}
