@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:55:18 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/10 00:12:55 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:47:56 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	push(t_stack *stack, int value)
 	stack->size++;
 }
 
-void	pop(t_stack *stack)
+int	pop(t_stack *stack)
 {
 	t_node	*tmp;
 	int		value;
@@ -35,6 +35,7 @@ void	pop(t_stack *stack)
 	stack->top = stack->top->next;
 	free(tmp);
 	stack->size--;
+	return (value);
 }
 
 t_stack	*create_stack(void)

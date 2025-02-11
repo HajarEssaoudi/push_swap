@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 00:12:11 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/10 00:13:38 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:50:50 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,10 @@ void	sort_stack(t_stack *source, t_stack *sorted)
 	int		value;
 
 	temp = create_stack();
-	while (source->size != 0)
+	while (source->size > 0)
 	{
-		value = source->top->data;
-		pop(source);
-		while ((sorted->size != 0) && value > sorted->top->data)
+		value = pop(source);
+		while ((sorted->size > 0) && value > sorted->top->data)
 		{
 			push(temp, sorted->top->data);
 			pop(sorted);

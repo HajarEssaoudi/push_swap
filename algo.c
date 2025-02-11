@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 21:52:03 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/10 00:07:34 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:59:39 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	move_a_to_b(t_stack *a, t_stack *b, t_stack *sorting_stack,
 	t_node	*current;
 
 	i = 0;
-	target = (chunk_info.chunk_size * (chunk_info.chunk_index + 1)) - 1;
 	current = sorting_stack->top;
+	target = (chunk_info.chunk_index + 1) * chunk_info.chunk_size - 1;
 	while (i < target)
 	{
 		if (current)
@@ -38,10 +38,8 @@ void	move_a_to_b(t_stack *a, t_stack *b, t_stack *sorting_stack,
 
 void	move_b_to_a(t_stack *a, t_stack *b)
 {
-	t_node	*current_b;
 	int		max;
 
-	current_b = b->top;
 	while (b->size > 0)
 	{
 		max = biggest(b);
@@ -60,10 +58,12 @@ void	move_b_to_a(t_stack *a, t_stack *b)
 
 void	search_in_a(t_stack *a, t_stack *b, int value)
 {
+	int i;
 	int	size;
 
+	i = 0;
 	size = a->size;
-	while (size)
+	while (i < size)
 	{
 		if (a->top->data <= value)
 		{
@@ -71,6 +71,6 @@ void	search_in_a(t_stack *a, t_stack *b, int value)
 		}
 		else
 			ra(a);
-		size--;
+		i++;
 	}
 }

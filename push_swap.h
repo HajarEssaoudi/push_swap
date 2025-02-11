@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:29:11 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/10 00:16:41 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:48:50 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void			rrr(t_stack *stack_a, t_stack *stack_b);
 // Handle stack
 t_stack			*create_stack(void);
 void			push(t_stack *stack, int value);
-void			pop(t_stack *stack);
+int			pop(t_stack *stack);
 t_stack			*init_a(int ac, char **av);
 void			print_a(t_stack *stack);
 void			free_stack(t_stack *stack);

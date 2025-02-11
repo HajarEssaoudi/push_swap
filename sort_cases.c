@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/31 22:39:02 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/10 00:07:02 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:56:02 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int	biggest(t_stack *stack)
 	int		biggest;
 	t_node	*current;
 
-	biggest = stack->top->data;
 	current = stack->top;
+	biggest = current->data;
 	while (current != NULL)
 	{
 		if (current->data > biggest)

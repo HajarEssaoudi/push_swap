@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:37:56 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/10 00:06:51 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/11 20:51:57 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,10 @@ void	sort_more(t_stack *a, t_stack *b)
 		chunk_count = 8;
 	else
 		chunk_count = 4;
-	chunk_info.chunk_size = (a->size) / chunk_count;
+	chunk_info.chunk_size = a->size / chunk_count;
 	if (a->size % chunk_count != 0)
 		chunk_info.chunk_size++;
-	while (chunk_info.chunk_index <= chunk_count)
+	while (chunk_info.chunk_index < chunk_count)
 	{
 		move_a_to_b(a, b, sorting_stack, chunk_info);
 		chunk_info.chunk_index++;
