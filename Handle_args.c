@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 21:10:37 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/01/24 21:49:15 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/11 19:02:31 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,22 @@ void	free_args(char **argv)
 	free(argv);
 }
 
+int	is_empty(char *str)
+{
+	int	j;
+
+	if (!str)
+		return (1);
+	j = 0;
+	while (str[j])
+	{
+		if (!(str[j] >= 9 && str[j] <= 13) && str[j] != 32)
+			return (0);
+		j++;
+	}
+	return (1);
+}
+
 int	count_args(int argc, char **argv)
 {
 	char	**args;
@@ -38,7 +54,7 @@ int	count_args(int argc, char **argv)
 	count_args = 0;
 	while (i < argc)
 	{
-		if (ft_strlen(argv[i]) == 0)
+		if (is_empty(argv[i]))
 			return (-1);
 		args = ft_split(argv[i], ' ');
 		if (!args)
