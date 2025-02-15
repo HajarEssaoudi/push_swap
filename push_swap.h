@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:29:11 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/11 20:48:50 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/15 23:41:30 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ int				biggest(t_stack *stack);
 void			sort_a(t_stack *stack_a, t_stack *stack_b);
 void			sort_two(t_stack *stack);
 void			sort_three(t_stack *stack);
-void			sort_four(t_stack *stack_a, t_stack *stack_b);
-void			sort_five(t_stack *stack_a, t_stack *stack_b);
 void			sort_more(t_stack *stack_a, t_stack *stack_b);
 
 // chunks

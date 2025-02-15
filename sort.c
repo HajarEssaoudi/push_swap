@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 00:37:56 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/11 20:51:57 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/15 23:41:24 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,35 +45,6 @@ void	sort_three(t_stack *stack)
 	}
 	else if (first > second && second < third && third > first)
 		sa(stack);
-}
-
-void	sort_four(t_stack *stack_a, t_stack *stack_b)
-{
-	int	min;
-
-	min = smallest(stack_a);
-	while (stack_a->top->data != min)
-		ra(stack_a);
-	pb(stack_a, stack_b);
-	sort_three(stack_a);
-	pa(stack_a, stack_b);
-}
-
-void	sort_five(t_stack *stack_a, t_stack *stack_b)
-{
-	int	min;
-
-	min = smallest(stack_a);
-	while (stack_a->top->data != min)
-		ra(stack_a);
-	pb(stack_a, stack_b);
-	min = smallest(stack_a);
-	while (stack_a->top->data != min)
-		ra(stack_a);
-	pb(stack_a, stack_b);
-	sort_three(stack_a);
-	pa(stack_a, stack_b);
-	pa(stack_a, stack_b);
 }
 
 void	sort_more(t_stack *a, t_stack *b)

@@ -6,7 +6,7 @@
 /*   By: hes-saou <hes-saou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 21:52:03 by hes-saou          #+#    #+#             */
-/*   Updated: 2025/02/11 20:59:39 by hes-saou         ###   ########.fr       */
+/*   Updated: 2025/02/15 23:26:44 by hes-saou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	search_in_a(t_stack *a, t_stack *b, int value)
 
 	i = 0;
 	size = a->size;
-	while (i < size)
+	while (i < size && a->size > 3)
 	{
 		if (a->top->data <= value)
 		{
@@ -72,5 +72,9 @@ void	search_in_a(t_stack *a, t_stack *b, int value)
 		else
 			ra(a);
 		i++;
+	}
+	if(a->size == 3)
+	{
+		sort_three(a);
 	}
 }
